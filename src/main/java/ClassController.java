@@ -13,8 +13,9 @@ import java.util.List;
 @RequestMapping("/class")
 public class ClassController {
 
-    private List<ClassController> classList = new ArrayList<>();
+    private List<ListOfClasses> classList = new ArrayList<>();
     private int id = 1;
+
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ModelAndView result() {
@@ -25,12 +26,12 @@ public class ClassController {
 
     @RequestMapping(value = "/test-form", method = RequestMethod.GET)
     public ModelAndView showForm() {
-        return new ModelAndView("test-form", "class", new ClassController());
+        return new ModelAndView("test-form", "class", new ListOfClasses());
     }
 
     @RequestMapping(value = "/postForm", method = RequestMethod.POST)
-    public String submitForm(@ModelAttribute("classController") ClassController classController, ModelMap model) {
-        classList.add(new ClassController(id++, classController.getName(), classController.getDescription()));
+    public String submitForm(@ModelAttribute("classController") ListOfClasses classController, ModelMap model) {
+        classList.add(new ListOfClasses(id++, classController.getName(), classController.getDescription()));
         return "redirect:/class";
     }
 
