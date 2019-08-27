@@ -1,3 +1,5 @@
+package cl.server;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,9 +15,12 @@ import java.util.List;
 @RequestMapping("/class")
 public class ClassController {
 
-    private List<ListOfClasses> classList = new ArrayList<>();
+//    @RequestMapping("/{userID}")
+//    public String getProfile(@PathVariable("userID") String userId) {
+//        return userId;
+//    }
+private List<Class> classList = new ArrayList<>();
     private int id = 1;
-
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ModelAndView result() {
@@ -26,13 +31,14 @@ public class ClassController {
 
     @RequestMapping(value = "/test-form", method = RequestMethod.GET)
     public ModelAndView showForm() {
-        return new ModelAndView("test-form", "class", new ListOfClasses());
+        return new ModelAndView("test-form", "aClass", new Class());
     }
 
     @RequestMapping(value = "/postForm", method = RequestMethod.POST)
-    public String submitForm(@ModelAttribute("classController") ListOfClasses classController, ModelMap model) {
-        classList.add(new ListOfClasses(id++, classController.getName(), classController.getDescription()));
+    public String submitForm(@ModelAttribute("aClass") Class aClass, ModelMap model) {
+        classList.add(new Class(id++, aClass.getname(), aClass.getdescription()));
         return "redirect:/class";
     }
+
 
 }

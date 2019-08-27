@@ -7,7 +7,7 @@
 
 <body>
     <table class="table table-hover table-sm">
-        <caption>List of class</caption>
+        <caption>List of users</caption>
         <thead>
         <tr>
             <th>ID</th>
@@ -16,14 +16,14 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items = "${classList}" var = "classController">
+        <c:forEach items = "${classList}" var = "aClass">
             <tr>
-             <td>${classController.id}</td>
-             <td>${classController.name}</td>
-             <td>${classController.description}</td>
+             <td>${aClass.id}</td>
+             <td>${aClass.name}</td>
+             <td>${aClass.description}</td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
-    <a class="btn btn-primary" href="/class/test-form">New ListOfClasses</a>
+    <a class="btn btn-primary" href="/user/test-form">New user</a>
 </body>

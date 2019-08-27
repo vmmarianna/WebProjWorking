@@ -1,6 +1,7 @@
+package cl.server;
 
-public class ListOfClasses {
 
+public class Class {
     public int getId() {
         return id;
     }
@@ -9,19 +10,19 @@ public class ListOfClasses {
         this.id = id;
     }
 
-    public String getName() {
+    public String getname() {
         return name;
     }
 
-    public void setName(String username) {
+    public void setname(String username) {
         this.name = name;
     }
 
-    public String getDescription() {
+    public String getdescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setdescription(String email) {
         this.description = description;
     }
 
@@ -29,10 +30,10 @@ public class ListOfClasses {
     private String name;
     private String description;
 
-    public ListOfClasses() {
+    public Class() {
     }
 
-    public ListOfClasses(int id, String name, String description) {
+    public Class(int id, String username, String description) {
         this.id = id;
         this.name = name;
         this.description = description;

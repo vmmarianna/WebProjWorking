@@ -7,9 +7,9 @@
 </head>
 
 <body>
-<form:form action="/class/postForm" method="POST" modelAttribute="classController">
+<form:form action="/class/postForm" method="POST" modelAttribute="aClass">
     <div>
-        <form:label path="name">name</form:label>
+        <form:label path="name">username</form:label>
         <form:input path="name" />
     </div>
     <div>
